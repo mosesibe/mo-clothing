@@ -39,24 +39,24 @@ class App extends React.Component {
 
   render() {
     return (
-        <div>
-          <Header />
-          <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/shop' component={ShopPage} />
-            <Route
-                exact
-                path='/signin'
-                render={() =>
-                    this.props.currentUser ? (
-                        <Redirect to='/' />
-                    ) : (
-                        <SignInAndSignUpPage />
-                    )
-                }
-            />
-          </Switch>
-        </div>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route
+            exact
+            path='/signin'
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
+        </Switch>
+      </div>
     );
   }
 }
@@ -70,6 +70,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(App);

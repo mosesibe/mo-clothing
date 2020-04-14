@@ -28,7 +28,7 @@ class SignUp extends React.Component {
       alert("passwords don't match");
       return;
     }
-    // Try to create a new user and auth them in 
+
     try {
       const { user } = await auth.createUserWithEmailAndPassword(
         email,

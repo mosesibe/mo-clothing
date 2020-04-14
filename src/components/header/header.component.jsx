@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from "react-redux"; // high oder component that lets us modify our component to have acces to things related to redux
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
-import CartDropdown from '../cart-dropdown/cart-dropdown.component'
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
@@ -31,14 +31,15 @@ const Header = ({ currentUser, hidden }) => (
           SIGN IN
         </Link>
       )}
-      <CartIcon/>
-    </div> 
-      {hidden ? null : <CartDropdown/>}
+      <CartIcon />
+    </div>
+    {hidden ? null : <CartDropdown />}
   </div>
 );
 
-  const mapStateToProps = ({user: { currentUser }, cart: { hidden}}) =>({
-    currentUser,
-    hidden
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden
 });
+
 export default connect(mapStateToProps)(Header);
